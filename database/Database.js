@@ -2,7 +2,9 @@ import * as firestore from "firebase/firestore";
 import {initializeApp}  from "firebase/app";
 
 export default class Database{
-    static database = null;
+    static isInitialized = false;
+    static database;
+
     static initDatabase(){
         initializeApp({
             apiKey: process.env.IRIS_FIREBASE_API_KEY,
@@ -13,7 +15,8 @@ export default class Database{
     }
 
     static getDatabase(){
-        if(Database.database === null){
+        if(this.isInitialized === false){
+            this.isInitialized = true;
             Database.initDatabase();
             return Database.database;
         }else {
