@@ -12,11 +12,12 @@ const app = express();
 app.use(cors);
 
 app.get('/', (req, res) => {
+    console.log("accessing root")
     res.send("HELLO")
 })
 
-app.listen(process.env.IAS_APP_PORT, () => {
-    console.log(`App listening on the port ${process.env.IAS_APP_PORT}`)
+app.listen(process.env.IRIS_APP_PORT , () => {
+    console.log(`App listening on the port ${process.env.IRIS_APP_PORT}`)
 })
 
 const db = Database.getDatabase();
