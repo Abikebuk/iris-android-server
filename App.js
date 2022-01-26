@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 
 new UserEndpoint(app);
 
-app.listen(3000, "0.0.0.0" );
+app.listen(process.env.IRIS_APP_PORT, "0.0.0.0" );
 
 /*
 const db = Database.getDatabase();
