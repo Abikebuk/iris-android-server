@@ -6,13 +6,15 @@ export default class User{
                 mail,
                 phone,
                 age,
-                gender) {
+                gender,
+                password) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.mail = mail;
         this.phone = phone;
         this.age = age;
         this.gender = gender;
+        this.password = password;
     }
 
     toString(){
@@ -24,10 +26,11 @@ export default class User{
             return {
                 firstname: user.firstname,
                 lastname: user.lastname,
-                mail: user.lastname,
+                mail: user.mail,
                 phone: user.phone,
                 age: user.age,
-                gender: user.age
+                gender: user.gender,
+                password: user.password
             }
         },
         fromFirestore: (snapshot, options) => {
