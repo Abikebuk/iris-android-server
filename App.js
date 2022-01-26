@@ -5,7 +5,9 @@ import UserEndpoint from "./endpoint/UserEndpoint.js";
 /**
  * Initialization
  */
-dotenv.config();
+if(process.env.IRIS_APP_DEV_MODE === true){
+    dotenv.config();
+}
 const app = express();
 app.use(cors());
 
