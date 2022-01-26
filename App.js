@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 
 new UserEndpoint(app);
 
-app.listen(3000 , () => {
+app.listen(3000, "0.0.0.0" , () => {
     console.log(`App listening on the port ${process.env.IRIS_APP_PORT}`)
 })
 
